@@ -1,95 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <link rel="stylesheet" type="text/css" href="InstructorInterfaceCSS.css">
-
 <head>
-
     <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
     <meta charset="UTF-8">
-
     <title>BreakingVAD</title>
-
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
-
 </head>
 <body>
 <h1> BreakingVAD </h1>
-<ul class = "menu">
-  <li id = "menuItem"> Contact Us	&nbsp;</li>
-  <li id = "menuItem"> Simulation	&nbsp;</li>
-  <li id = "menuItem"> Home	&nbsp;</li>
-</ul>
 <div class="nextSection">
   <hr size = "5px" color = "#B0C4DE" align = "left"> </hr>
-  <div class = "formatBeginning">
-    Flow Rate: <input type="text" id="flowrate" class = "font"><br>
-  </div>
-  <div class = "format">
-    RPM: <input type="text" id="rpm" class = "font"><br>
-  </div>
-  <div class = "format">
-    Power: <input type="text" id="power" class = "font"><br>
-  </div>
-  <div class = "format">
-    Power Amplitude: <input type="text" id="powerAmplitude" class = "font"><br>
-  </div>
-  <div class = "format">
-    Flowrate Amplitude: <input type="text" id="flowrateAmplitude" class = "font"><br>
-  </div>
-  <div class = "formatEnding">
-    <button type="button" onclick="buttonAction()" class = "font"> Create Simulation </button>
-  </div>
 </div>
+<div class= "container">
+  <br></br>
+  <input id="txtEmail" type="email" placeholder ="Email">
+  <br></br>
+  <br></br>
+  <input id="txtPassword" type="password" placeholder ="Password">
+  <br></br>
 
-<script src="Users/juliazhang/Documents/WebstromProjects/react-15.3.1/build/react.js"></script>
-<script src="Users/juliazhang/Documents/WebstromProjects/react-15.3.1/build/react-dom.js"></script>
+  <button id="btnLogin" class ="btn btn-action"> Log In </button>
+  <button id="btnSignUp" class ="btn btn-secondary"> Sign Up </button>
+
+<script src ="app.js"></script>
 <script>
-    /*var Greeting = React.createClass({
-     render: function() {
-     return (
-     <p>Hello, Universe</p>
-     )
-     }
-     });
-
-     ReactDOM.render(
-     <Greeting/>,
-     document.getElementById('javascript-div')
-     );*/
-
-    var config = {
-        apiKey: "AIzaSyCgUH5OSIKVmCNPJHkSQhCHgl66iM-7f_g",
-        authDomain: "project-b10ed.firebaseapp.com",
-        databaseURL: "https://project-b10ed.firebaseio.com",
-        storageBucket: "project-b10ed.appspot.com",
-    };
-
-    firebase.initializeApp(config);
-
-    var database = firebase.database();
-    var values = database.ref("values");
-
-    function buttonAction(){
-        var valFlow = $('#flowrate').val();
-        var valRPM = $('#rpm').val();
-        var valPower = $('#power').val();
-        var valPowerAmp = $('#powerAmplitude').val();
-        var valFlowAmp = $('#flowrateAmplitude').val();
-        values.set(
-            {
-                flowrate: valFlow,
-                RPM: valRPM,
-                power: valPower,
-                powerAmplitude: valPowerAmp,
-                flowAmplitude: valFlowAmp
-            }
-        );
-    }
-
+   var config = {
+     apiKey: "AIzaSyDHQ1wGhiNYdzBHIdb_mzMXfnyp0GdGnR8",
+     authDomain: "breaking-vad-online-simulation.firebaseapp.com",
+     databaseURL: "https://breaking-vad-online-simulation.firebaseio.com",
+     storageBucket: "breaking-vad-online-simulation.appspot.com",
+   };
+   firebase.initializeApp(config);
 </script>
-
 </body>
-
 </html>
